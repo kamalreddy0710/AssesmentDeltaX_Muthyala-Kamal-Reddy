@@ -5,10 +5,12 @@ Artists
  - Name
  - DOB
  - Bio
+ 
 Songs
  - Name
  - Date of Release
  - Cover (image)
+  
 User
  - Name
  - Email
