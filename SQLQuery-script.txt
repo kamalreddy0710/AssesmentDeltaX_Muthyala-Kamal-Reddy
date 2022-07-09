@@ -1,0 +1,6 @@
+use DeltaX
+Create Table Songs(SongId int identity(1,1) not null,SongName Varchar(30) not null, DateReleased varchar(30) not null,ArtWork varchar(max) not null,Artists varchar(30) not null,Rating int , primary key(SongId))
+Create Table Artists(ArtistId int identity(1,1) not null,ArtistName varchar(30) not null,DateofBirth varchar(30) not null,Bio varchar(300) not null primary key(ArtistId))
+Create Table [User](UserId int identity(1,1) not null,UserName varchar(30) not null,Password varchar(30),Email varchar(30) not null,primary key(UserId))
+
+ 

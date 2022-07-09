@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Musictify.Models.Song>
+
+@{
+    ViewData["Title"] = "Songs";
+}
+
+<h1> Songs</h1>
+
+
+<p>
+    <a  asp-action="AddSong" class=" btn btn-primary" >+ Add Song </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.ArtWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SongName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateReleased)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Artists)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                <img src="~/Images/@Html.DisplayFor(modelItem => item.ArtWork)" width=100 height=100/>                                             
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateReleased)
+            </td>
+            
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Artists)
+
+            </td>
+            @*<td>
+                
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>*@
+               
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.SongId">Edit</a> |
+                      @*  <a asp-action="Details" asp-route-id="@item.SongId">Details</a> |*@
+                        <a asp-action="Delete" asp-route-id="@item.SongId">Delete</a>
+                    </td>
+                 
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a  asp-action="AddSong" class=" btn btn-primary" >+ Add Song </a>
+</p>
